@@ -1,0 +1,13 @@
+Sub SendMail()
+
+Dim sh As Worksheet
+Set sh = ActiveSheet
+
+
+With sh.MailEnvelope.Item
+  .to = "user@gmail.com"
+  .Subject = "from excel"
+  .attachments.Add ActiveWorkbook.FullName
+  .send
+End With
+End Sub
